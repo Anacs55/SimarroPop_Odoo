@@ -1,0 +1,127 @@
+<odoo>
+    <data>
+
+    <record id="f01" model="galaxy.faction">
+      <field name="name">Republic of Humanity (ROH)</field>
+      <field name="description">Raza Humana</field>
+      <field name="picture"></field>
+    </record>
+
+    <record id="f02" model="galaxy.faction">
+      <field name="name">Imperio de los Za'ars</field>
+      <field name="description">Raza Za'ares</field>
+      <field name="picture"></field>
+    </record>
+
+    <record id="f03" model="galaxy.faction">
+      <field name="name">Republica de Moirax</field>
+      <field name="description">Raza Mo</field>
+      <field name="picture"></field>
+    </record>
+
+    <record id="planet_01" model="galaxy.planet">
+      <field name="name">Nombre del Planeta Jugador 1</field>
+      <field name="description">Descripcion del Planeta</field>
+      <field name="picture"></field>
+      <field name="tropas">0</field>
+      <field name="naves">0</field>
+      <field name="casas">1</field>
+      <field name="recursos">100</field>
+      <field name="fabricas">1</field>
+      <field name="population">0</field>
+      <field name="populationtotal">20</field>
+    </record>
+
+    <record id="planet_02" model="galaxy.planet">
+      <field name="name">Nombre del Planeta Jugador 2</field>
+      <field name="description">Descripcion del Planeta</field>
+      <field name="picture"></field>
+      <field name="tropas">0</field>
+      <field name="naves">0</field>
+      <field name="casas">1</field>
+      <field name="recursos">100</field>
+      <field name="fabricas">1</field>
+      <field name="population">0</field>
+      <field name="populationtotal">20</field>
+    </record>     
+
+    <record id="build_type_01" model="galaxy.building_type">
+      <field name="name">Fabrica de Recursos</field>
+      <field name="description">Edificio especializado en recolectar los recursos</field>
+      <field name="picture"></field>
+      <field name="pop">0</field>
+      <field name="precio">50</field>
+      <field name="tipo">1</field>
+    </record>
+
+    <record id="build_type_02" model="galaxy.building_type">
+      <field name="name">Cuartel</field>
+      <field name="description">Edificio especializado en formación de tropas terrestres</field>
+      <field name="picture"></field>
+      <field name="pop">0</field>
+      <field name="precio">35</field>
+      <field name="tipo">2</field>
+    </record> 
+
+    <record id="build_type_03" model="galaxy.building_type">
+      <field name="name">Estacion Espacial</field>
+      <field name="description">Edificio espacial que fabrica las naves y defiende las aduanas del planeta</field>
+      <field name="picture"></field>
+      <field name="pop">20</field>
+      <field name="precio">100</field>
+      <field name="tipo">3</field>
+    </record> 
+
+    <record id="build_type_04" model="galaxy.building_type">
+      <field name="name">Casa</field>
+      <field name="description">Edificio Civil que ayuda a aumentar la poblacion</field>
+      <field name="picture"></field>
+      <field name="pop">10</field>
+      <field name="precio">40</field>
+      <field name="tipo">4</field>
+    </record> 
+
+    <record id="build_type_05" model="galaxy.building_type">
+      <field name="name">Edicio</field>
+      <field name="description">Edificio Civil que ayuda a aumentar la poblacion de forma moderada</field>
+      <field name="picture"></field>
+      <field name="pop">15</field>
+      <field name="precio">60</field>
+      <field name="tipo">4</field>
+    </record> 
+
+    <record id="player_01" model="res.partner">
+      <field name="nickname">Jugador 1</field>
+      <field name="name">Nombre Jugador 1</field>
+      <field name="lastname">Apellido Jugador 1</field>
+      <field name="password">1234</field>
+      <field name="nivel">1</field>
+      <field name="exp">0.1</field>
+      <field name="avatar"></field>
+      <field name="faction" ref="f01"></field>
+      <field name="planet" ref="planet_01"></field>
+      <field name="recursototales">500</field>
+      <field name="ships">0</field>
+      <field name="troops">0</field>
+      <field name="is_player">true</field>
+    </record>
+
+    <record id="player_02" model="res.partner">
+      <field name="nickname">Jugador 2</field>
+      <field name="name">Nombre Jugador 2</field>
+      <field name="lastname">Apellido Jugador 2</field>
+      <field name="password">1234</field>
+      <field name="nivel">1</field>
+      <field name="exp">0.1</field>
+      <field name="avatar"></field>
+      <field name="faction" ref="f03"></field>
+      <field name="planet" ref="planet_02"></field>
+      <field name="recursototales">500</field>
+      <field name="ships">0</field>
+      <field name="troops">0</field>
+      <field name="is_player">true</field>
+    </record>      
+
+  
+    </data>
+</odoo>

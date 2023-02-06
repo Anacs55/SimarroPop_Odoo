@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+   <!-- explicit list view definition -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="galaxy.action_player_window">
+      <field name="name">Player</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="galaxy.action_faction_window">
+      <field name="name">Faction</field>
+      <field name="res_model">galaxy.faction</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="galaxy.action_planet_window">
+      <field name="name">Planet</field>
+      <field name="res_model">galaxy.planet</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="galaxy.action_building_window">
+      <field name="name">Building</field>
+      <field name="res_model">galaxy.building</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    
+    <record model="ir.actions.act_window" id="galaxy.action_building_type_window">
+      <field name="name">Building type</field>
+      <field name="res_model">galaxy.building_type</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="galaxy.action_battle_window">
+      <field name="name">Battle</field>
+      <field name="res_model">galaxy.battle</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>    
+
+    <!-- server action to the one above -->
+
+    <!-- Top menu item -->
+
+  <menuitem name="galaxy" id="galaxy.menu_root"/>
+
+    <!-- menu categories -->
+
+  <menuitem name="Factions" id="galaxy.menu_1" parent="galaxy.menu_root"/>
+  <menuitem name="Players" id="galaxy.menu_2" parent="galaxy.menu_root"/>
+  <menuitem name="Planets and buildings" id="galaxy.menu_3" parent="galaxy.menu_root"/>
+  <menuitem name="Battles" id="galaxy.menu_4" parent="galaxy.menu_root"/>
+
+    <!-- actions -->
+
+  <menuitem name="Players" id="galaxy.menu_galax_player" parent="galaxy.menu_2"
+            action="galaxy.action_player_window"/>
+  <menuitem name="Faction" id="galaxy.menu_galax_faction" parent="galaxy.menu_1"
+            action="galaxy.action_faction_window"/>
+  <menuitem name="Planet" id="galaxy.menu_galax_planet" parent="galaxy.menu_3"
+            action="galaxy.action_planet_window"/>
+  <menuitem name="Build" id="galaxy.menu_galax_building" parent="galaxy.menu_3"
+            action="galaxy.action_building_window"/>  
+  <menuitem name="Build type" id="galaxy.menu_galax_building_type" parent="galaxy.menu_3"
+            action="galaxy.action_building_type_window"/>
+  <menuitem name="Battle" id="galaxy.menu_galax_battle" parent="galaxy.menu_4" 
+            action="galaxy.action_battle_window"/>                       
+  </data>
+</odoo>

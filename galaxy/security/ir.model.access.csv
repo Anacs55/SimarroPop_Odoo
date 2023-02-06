@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_galaxy_faction,galaxy.faction,model_galaxy_faction,base.group_user,1,1,1,1
+access_galaxy_planet,galaxy.planet,model_galaxy_planet,base.group_user,1,1,1,1
+access_galaxy_building,galaxy.building,model_galaxy_building,base.group_user,1,1,1,1
+access_galaxy_building_type,galaxy.building_type,model_galaxy_building_type,base.group_user,1,1,1,1
+access_galaxy_battle,galaxy.battle,model_galaxy_battle,base.group_user,1,1,1,1

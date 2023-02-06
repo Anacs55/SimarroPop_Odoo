@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+    <record model="ir.ui.view" id="galaxy.battleform">
+      <field name="name">batallas form</field>
+      <field name="model">galaxy.battle</field>
+      <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="playerdefence"/>
+                <field name="defenceplanet"/>
+                <field name="playerattack"/>     
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.battletree">
+      <field name="name">batallas tree</field>
+      <field name="model">galaxy.battle</field>
+      <field name="arch" type="xml">
+          <tree>
+            <field name="playerdefence"/>
+            <field name="defenceplanet"/>
+            <field name="playerattack"/>      
+          </tree>
+      </field>
+    </record>
+
+    </data>
+</odoo>    

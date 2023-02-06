@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+    <record model="ir.ui.view" id="galaxy.factionform">
+      <field name="name">Factions</field>
+      <field name="model">galaxy.faction</field>
+      <field name="arch" type="xml" >
+          <form>
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="picture" widget="image"/>
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.factiontree">
+      <field name="name">Faction</field>
+      <field name="model">galaxy.faction</field>
+      <field name="arch" type="xml">
+          <tree decoration-info="name == 'Republic of Humanity (ROH)'" decoration-danger="description == '	Raza Mo'" decoration-success="name == 'Republica de Moirax'">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="picture" widget="image"/>
+          </tree>
+      </field>
+    </record>
+
+    </data>
+</odoo>

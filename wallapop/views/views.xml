@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="wallapop.articulo">
+      <field name="name">wallapop articulo</field>
+      <field name="model">wallapop.articulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="wallapop.articulo_window">
+      <field name="name">wallapop articulo</field>
+      <field name="res_model">wallapop.articulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="wallapop.action_server">
+      <field name="name">wallapop server</field>
+      <field name="model_id" ref="model_wallapop_wallapop"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="wallapop" id="wallapop.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Articulo" id="wallapop.menu_articulo" parent="wallapop.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Articulos" id="wallapop.menu_articulos" parent="wallapop.menu_articulo"
+              action="wallapop.articulo_window"/>
+
+  </data>
+</odoo>

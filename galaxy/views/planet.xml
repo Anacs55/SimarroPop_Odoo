@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="galaxy.planetform">
+      <field name="name">planet</field>
+      <field name="model">galaxy.planet</field>
+      <field name="arch" type="xml">
+          <form>
+          <header>
+          Planeta:
+          </header>
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="picture" widget="image"/>
+                <field name="tropas"/>
+                <field name="naves"/>
+                <field name="casas"/>
+                <field name="recursos"/>
+                <field name="cuarteles"/>
+                <field name="estacionespacial"/>
+                <field name="fabricas"/>
+                <field name="population"/>
+                <field name="populationtotal"/>
+                <button name="troopcreate"
+                type="object"
+                class="btn btn-primary"
+                >Crear Tropa</button>
+                <button name="navescreate"
+                type="object"
+                class="btn btn-primary"
+                >Crear Nave</button>                                    
+              </group>
+              <notebook>
+                <page string="building">
+                  <group>
+                    <field name="building" mode="tree">
+                    <tree>
+                      <field name="name"/>
+                    </tree>  
+                    </field> 
+                    <field name="building_available" mode="kanban">
+                      <kanban>
+                        <field name="id"/>
+                        <field name="picture"/>
+                        <field name="name"/>
+                        <templates>
+                          <t t-name="kanban-box">
+                              <div t-attf-class="oe_kanban_card o_kanban_record_has_image_fill ">
+                                <div class="o_kanban_image_fill_left o_kanban_image_full d-none d-md-block"
+                                t-attf-style="background-image:url('#{kanban_image('galaxy.building_type',
+                                'picture', record.id.value, placeholder)}')">
+                                </div>
+
+                                  <div class="oe_kanban_details d-flex flex-column">
+                                    <a type="open">
+                                      <h4 class="o_kanban_record_title oe_partner_heading"><field name="name"/></h4></a>
+                                        <ul>
+                                          <li>Price: <field name="precio"/></li>
+                                        </ul>
+                                  </div>
+                                  <div class="oe_kanban_details d-flex flex-column">
+                                    <button name="build"
+                                            type="object"
+                                            string="Build"
+                                            class="btn btn-primary"
+                                            context="{'ctx_planet':parent.id}"
+                                    >Build</button>
+                                  </div>
+                              </div>
+                          </t>
+                        </templates>
+                      </kanban>
+                    </field>
+                  </group>
+                </page>
+              </notebook>
+            </sheet>
+          </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.planettree">
+      <field name="name">planet</field>
+      <field name="model">galaxy.planet</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="picture" widget="image"/>
+                <field name="tropas"/>
+                <field name="naves"/>
+                <field name="casas"/>
+                <field name="cuarteles"/>
+                <field name="estacionespacial"/>                
+                <field name="recursos"/>
+                <field name="fabricas"/>
+                <field name="population"/>
+                <field name="populationtotal"/>
+          </tree>
+      </field>
+    </record>
+
+
+    </data>
+</odoo>    

@@ -1,0 +1,141 @@
+<odoo>
+    <data>
+
+    <record model="ir.ui.view" id="galaxy.playerform">
+      <field name="name">Player</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="nickname"/>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="password"/>
+                <field name="nivel"/>
+                <field name="exp"/>
+                <field name="avatar" widget="image"/>
+                <field name="faction"/>
+                <field name="is_player"/>
+                <field name="recursototales"/>
+                <field name="ships"/>  
+                <field name="troops"/>                       
+                <field name="planet"/>     
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.playertree">
+      <field name="name">Player</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="avatar" widget="image"/>
+                <field name="nickname"/>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="nivel"/>
+                <field name="exp"/>
+                <field name="password"/>
+                <field name="faction"/>
+                <field name="is_player"/>
+                <field name="recursototales"/>
+                <field name="ships"/>  
+                <field name="troops"/>    
+                <field name="planet"/>  
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.playertree">
+      <field name="name">Player</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="avatar" widget="image"/>
+                <field name="nickname"/>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="nivel"/>
+                <field name="exp"/>
+                <field name="password"/>
+                <field name="faction"/>
+                <field name="is_player"/>
+                <field name="recursototales"/>
+                <field name="ships"/>  
+                <field name="troops"/>    
+                <field name="planet"/>  
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="galaxy.player_kanban_view">
+      <field name="name">Player kanban</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+      <kanban>
+      <field name="id"/>
+      <field name="nickname"/>
+      <field name="name"/>
+      <field name="lastname"/>
+      <field name="avatar"/>
+      <field name="is_player"/>
+      <templates>
+        <t t-name="kanban-box">
+          <div class="oe_product_vignette">
+          <table>
+          <tr>
+            <td rowspan="3">
+              <h4><a type="edit"><field name="nickname"/></a></h4>     
+              <a type="open">
+               <img alt="avatar" class="o_image_64_contain" 
+                t-att-src="kanban_image('galaxy.player', 'avatar', record.id.value)" />
+              </a> 
+            </td>  
+            <td>
+                <ul>
+                  <li><field name="nickname"/></li>
+                  <li><field name="name"/></li>
+                  <li><field name="is_player"/></li>
+                </ul>
+              </td>
+            </tr>
+          </table> 
+          </div>       
+        </t>
+      </templates>
+      </kanban>
+      </field>
+    </record>  
+
+    <record model="ir.ui.view" id="galaxy.player_partner_list">
+      <field name="name">Player partner</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <notebook position="inside">
+          <page string="players">
+            <group>
+                <field name="avatar" widget="image"/>
+                <field name="nickname"/>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="nivel"/>
+                <field name="exp"/>
+                <field name="password"/>
+                <field name="faction"/>
+                <field name="is_player"/>
+                <field name="recursototales"/>
+                <field name="ships"/>  
+                <field name="troops"/>    
+                <field name="planet"/>  
+            </group>
+          </page>
+        </notebook>
+      </field>
+    </record>
+
+    </data>
+</odoo>
